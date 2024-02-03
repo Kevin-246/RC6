@@ -1,0 +1,15 @@
+AUTOMAKE_OPTIONS = foreign subdir-objects
+
+ACLOCAL_AMFLAGS = -I m4
+
+CXXFLAGS = -g0 -Wall -I./Include/ -std=c++20
+
+lib_LTLIBRARIES = lib/libRC6.la
+lib_libRC6_la_SOURCES = src/RC6.cpp
+
+bin_PROGRAMS = main
+main_SOURCES = src/main.cpp
+
+main_DEPENDENCIES = lib/libRC6.la
+
+main_LDADD = lib/libRC6.la
